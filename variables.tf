@@ -105,7 +105,17 @@ variable "zone" {
 EOT
 }
 variable "type" {
-    description = "URL of the disk type resource describing which disk type to use to create the disk"
+    description = <<-EOT
+  {
+   "type": "json",
+   "purpose": "autocomplete",
+   "data": [ "pd-standard",
+             "pd-balanced",
+             "pd-ssd"
+              ],
+   "description": "this is the disk_type"
+}
+EOT
     type        = string
 }
 
@@ -260,8 +270,7 @@ description = <<-EOT
  "description": "this is the boot_disk_image with which the vm will be created"
 }
 EOT
-}
-  type        = string
+type        = string
 }
 
 variable "physical_block_size_bytes" {
@@ -284,7 +293,7 @@ variable "interface" {
    "type": "json",
    "purpose": "autocomplete",
    "data": [ "SCSI",
-             " NVME",
+             " NVME"
            ],
    "description": "Specifies the disk interface to use for attaching this disk"
 }
@@ -298,8 +307,97 @@ variable "provisioned_iops" {
 }
 
 variable "snapshot" {
-    description = "The source snapshot used to create this disk"
+    description = <<-EOT
+  {
+   "type": "json",
+   "purpose": "autocomplete",
+   "data": [ "centos-7-v20220126",
+             "centos-stream-8-v20220128",
+             "cos-85-13310-1416-5",
+             "cos-89-16108-604-11",
+             "cos-93-16623-102-12",
+             "cos-beta-93-16623-39-6",
+             "debian-10-buster-v20220118",
+             "debian-11-bullseye-v20220120",
+             "debian-9-stretch-v20220118",
+             "fedora-cloud-base-gcp-33-1-2-x86-64",
+             "fedora-cloud-base-gcp-34-1-2-x86-64",
+             "fedora-cloud-base-gcp-35-1-2-x86-64",
+             "opensuse-leap-15-2-v20200702",
+             "opensuse-leap-15-3-v20220128",
+             "rhel-7-v20220126",
+             "rhel-8-v20220126",
+             "rhel-7-6-sap-v20220126",
+             "rhel-7-7-sap-v20220126",
+             "rhel-7-9-sap-v20220126",
+             "rhel-8-1-sap-v20220126",
+             "rhel-8-2-sap-v20220126",
+             "rhel-8-4-sap-v20220126",
+             "rocky-linux-8-v20220126",
+             "sles-12-sp5-v20220126",
+             "sles-15-sp3-v20220126",
+             "sles-12-sp3-sap-v20220201",
+             "sles-12-sp4-sap-v20220201",
+             "sles-12-sp5-sap-v20220126",
+             "sles-15-sap-v20220126",
+             "sles-15-sp1-sap-v20220126",
+             "sles-15-sp2-sap-v20220126",
+             "sles-15-sp3-sap-v20220126",
+             "ubuntu-1804-bionic-v20220213",
+             "ubuntu-pro-1604-xenial-v20211213",
+             "ubuntu-pro-1804-bionic-v20220131",
+             "ubuntu-pro-2004-focal-v20220204",
+             "windows-server-2012-r2-dc-core-v20220210",
+             "windows-server-2012-r2-dc-v20220210",
+             "windows-server-2016-dc-core-v20220210",
+             "sql-2012-enterprise-windows-2012-r2-dc-v20220210",
+             "sql-2012-standard-windows-2012-r2-dc-v20220210",
+             "sql-2012-web-windows-2012-r2-dc-v20220210",
+             "sql-2014-enterprise-windows-2012-r2-dc-v20220210",
+             "sql-204-enterprise-windows-2016-dc-v20220210",
+             "sql-2014-standard-windows-2012-r2-dc-v20220210",
+             "sql-2014-web-windows-2012-r2-dc-v20220210",
+             "cos-dev-97-16882-0-0",
+             "cos-stable-93-16623-102-12",
+             "ubuntu-2004-focal-v20220204",
+             "ubuntu-2110-impish-v20220204",
+             "ubuntu-minimal-1804-bionic-v20220208",
+             "ubuntu-minimal-2004-focal-v20220203",
+             "ubuntu-minimal-2110-impish-v20220203",
+             "windows-server-2016-dc-v20220210",
+             "windows-server-2019-dc-core-for-containers-v20220211",
+            "windows-server-2019-dc-core-v20220210",
+            "windows-server-2019-dc-for-containers-v20220211",
+            "windows-server-2019-dc-v20220210",
+            "windows-server-20h2-dc-core-v20220210",
+            "sql-2016-enterprise-windows-2012-r2-dc-v20220210",
+            "sql-2016-enterprise-windows-2016-dc-v20220210",
+            "sql-2016-enterprise-windows-2019-dc-v20220210",
+            "sql-2016-standard-windows-2012-r2-dc-v20220210",
+            "sql-2016-standard-windows-2016-dc-v20220210",
+            "sql-2016-standard-windows-2019-dc-v20220210",
+            "sql-2016-web-windows-2012-r2-dc-v20220210",
+            "sql-2016-web-windows-2016-dc-v20220210",
+            "sql-2016-web-windows-2019-dc-v20220210",
+            "fedora-coreos-35-20220116-3-0-gcp-x86-64",
+            "fedora-coreos-35-20220131-1-0-gcp-x86-64",
+            "fedora-coreos-35-20220131-2-0-gcp-x86-64",
+            "sql-2017-enterprise-windows-2016-dc-v20220210",
+            "sql-2017-enterprise-windows-2019-dc-v20220210",
+            "sql-2017-express-windows-2012-r2-dc-v20220210",
+            "sql-2017-express-windows-2016-dc-v20220210",
+            "sql-2017-express-windows-2019-dc-v20220210",
+            "sql-2017-standard-windows-2016-dc-v20220210",
+            "sql-2017-standard-windows-2019-dc-v20220210",
+            "sql-2017-web-windows-2016-dc-v20220210",
+            "sql-2017-web-windows-2019-dc-v20220210",
+            "sql-2019-enterprise-windows-2019-dc-v20220210",
+            "sql-2019-standard-windows-2019-dc-v20220210",
+            "sql-2019-web-windows-2019-dc-v20220211"
+        ],        
+        "description": "this is the snapshot to be used"
+}
+EOT
     type        = string
     default     = ""
 }
- 
