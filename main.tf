@@ -11,4 +11,7 @@ resource "google_compute_disk" "disk" {
   provisioned_iops          = var.provisioned_iops
   snapshot                  = var.snapshot
   project                   = var.project
+  disk_encryption_key{
+  kms_key_self_link         = var.kms_key_self_link
+  }
 }
