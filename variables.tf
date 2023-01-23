@@ -30,11 +30,11 @@ variable "project" {
     type        = string
 }
 
-variable "labels" {
-    description = "Labels to apply to this disk"
-    type        = map(string)
+# variable "labels" {
+#     description = "Labels to apply to this disk"
+#     type        = map(string)
 
-}
+# }
 
 #OPTIONAL VARIABLES
 
