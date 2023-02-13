@@ -15,3 +15,8 @@ resource "google_compute_disk" "disk" {
   kms_key_self_link         = var.kms_key_self_link
   }
 }
+
+resource "google_compute_attached_disk" "default" {
+  disk     = google_compute_disk.disk.name
+  instance = var.instance
+}

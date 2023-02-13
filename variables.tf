@@ -30,11 +30,11 @@ variable "project" {
     type        = string
 }
 
-# variable "labels" {
-#     description = "Labels to apply to this disk"
-#     type        = map(string)
+variable "disk" {
+    description = "Labels to apply to this disk"
+    type        = string
 
-# }
+}
 
 #OPTIONAL VARIABLES
 
@@ -76,6 +76,11 @@ variable "snapshot" {
 variable "kms_key_self_link" {
     description = "The kms_key_self_link for this disk"
     type        = string
-    default     = ""
+    
+}
+variable "instance" {
+    description = "The kms_key_self_link for this disk"
+    type        = string
+
 }
  
