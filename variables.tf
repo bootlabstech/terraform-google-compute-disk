@@ -43,11 +43,7 @@ variable "image" {
     type        = string
     default     = ""
 }
-variable "zone" {
-    description = "The image from which to initialize this disk"
-    type        = string
-    
-}
+
 
 variable "physical_block_size_bytes" {
     description = "Physical block size of the persistent disk, in bytes"
