@@ -43,7 +43,7 @@ variable "image" {
     type        = string
     default     = ""
 }
-variable "zone" {
+variable "zone_attach" {
     description = "The image from which to initialize this disk"
     type        = string
     
