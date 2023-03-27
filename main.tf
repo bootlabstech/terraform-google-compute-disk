@@ -21,4 +21,7 @@ resource "google_compute_attached_disk" "default" {
   instance = var.instance
   project = var.project
   zone = var.zone
+  depends_on = [
+    google_compute_disk.disk
+  ]
 }
