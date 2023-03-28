@@ -48,7 +48,6 @@ variable "image" {
 variable "physical_block_size_bytes" {
     description = "Physical block size of the persistent disk, in bytes"
     type        = number
-    default     = 0
 }
 
 variable "description" {
@@ -74,11 +73,11 @@ variable "snapshot" {
     type        = string
     default     = ""
 }
-variable "kms_key_self_link" {
-    description = "The kms_key_self_link for this disk"
-    type        = string
+# variable "kms_key_self_link" {
+#     description = "The kms_key_self_link for this disk"
+#     type        = string
     
-}
+# }
 variable "instance" {
     description = "The kms_key_self_link for this disk"
     type        = string
