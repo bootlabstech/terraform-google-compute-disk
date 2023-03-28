@@ -30,11 +30,11 @@ variable "project" {
     type        = string
 }
 
-variable "disk" {
-    description = "Labels to apply to this disk"
-    type        = string
+# variable "disk" {
+#     description = "Labels to apply to this disk"
+#     type        = string
 
-}
+# }
 
 #OPTIONAL VARIABLES
 
