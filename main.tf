@@ -14,9 +14,9 @@ resource "google_compute_disk" "disk" {
 #   depends_on = [
 #     google_compute_instance.default 
 #   ]
-#   disk_encryption_key{
-#   kms_key_self_link         = var.kms_key_self_link
-#   }
+  disk_encryption_key{
+  kms_key_self_link         = var.kms_key_self_link
+  }
 } 
 
 resource "google_compute_attached_disk" "default" {

@@ -73,11 +73,11 @@ variable "snapshot" {
     type        = string
     default     = ""
 }
-# variable "kms_key_self_link" {
-#     description = "The kms_key_self_link for this disk"
-#     type        = string
+variable "kms_key_self_link" {
+    description = "The kms_key_self_link for this disk"
+    type        = string
     
-# }
+}
 variable "instance" {
     description = "The kms_key_self_link for this disk"
     type        = string
