@@ -1,33 +1,33 @@
 #REQUIRED VARIABLES
 
 variable "name" {
-    description = "Name of the disk"
-    type        =  string
+  description = "Name of the disk"
+  type        = string
 }
 
 variable "zone" {
-    description = "A reference to the zone where the disk resides"
-    type        = string
+  description = "A reference to the zone where the disk resides"
+  type        = string
 }
 
 variable "type" {
-    description = "URL of the disk type resource describing which disk type to use to create the disk"
-    type        = string
+  description = "URL of the disk type resource describing which disk type to use to create the disk"
+  type        = string
 }
 
 variable "region" {
-    description = "The available regions for the instance"
-    type        = string
+  description = "The available regions for the instance"
+  type        = string
 }
 
 variable "size" {
-    description = "Size of the persistent disk, specified in GB"
-    type        = number
+  description = "Size of the persistent disk, specified in GB"
+  type        = number
 }
 
 variable "project" {
-    description = "The ID of the project in which the resource belongs"
-    type        = string
+  description = "The ID of the project in which the resource belongs"
+  type        = string
 }
 
 # variable "disk" {
@@ -39,48 +39,48 @@ variable "project" {
 #OPTIONAL VARIABLES
 
 variable "image" {
-    description = "The image from which to initialize this disk"
-    type        = string
-    default     = ""
+  description = "The image from which to initialize this disk"
+  type        = string
+  default     = ""
 }
 
 
 variable "physical_block_size_bytes" {
-    description = "Physical block size of the persistent disk, in bytes"
-    type        = number
+  description = "Physical block size of the persistent disk, in bytes"
+  type        = number
 }
 
 variable "description" {
-    description = "An optional description of this resource"
-    type        = string
-    default     = "This is a description for this resource"
+  description = "An optional description of this resource"
+  type        = string
+  default     = "This is a description for this resource"
 }
 
 variable "interface" {
-    description = "Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME"
-    type        = string
-    default     = "SCSI"
+  description = "Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME"
+  type        = string
+  default     = "SCSI"
 }
 
 variable "provisioned_iops" {
-    description = "Indicates how many IOPS must be provisioned for the disk"
-    type        = number
-    default     = 0
+  description = "Indicates how many IOPS must be provisioned for the disk"
+  type        = number
+  default     = 0
 }
 
 variable "snapshot" {
-    description = "The source snapshot used to create this disk"
-    type        = string
-    default     = ""
+  description = "The source snapshot used to create this disk"
+  type        = string
+  default     = ""
 }
 variable "kms_key_self_link" {
-    description = "The kms_key_self_link for this disk"
-    type        = string
-    
+  description = "The kms_key_self_link for this disk"
+  type        = string
+
 }
 variable "instance" {
-    description = "The kms_key_self_link for this disk"
-    type        = string
+  description = "The kms_key_self_link for this disk"
+  type        = string
 
 }
  
