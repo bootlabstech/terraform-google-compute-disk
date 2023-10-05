@@ -25,7 +25,7 @@ variable "size" {
   type        = number
 }
 
-variable "project" {
+variable "project_id" {
   description = "The ID of the project in which the resource belongs"
   type        = string
 }
@@ -48,6 +48,7 @@ variable "image" {
 variable "physical_block_size_bytes" {
   description = "Physical block size of the persistent disk, in bytes"
   type        = number
+  default=4096
 }
 
 variable "description" {
@@ -83,4 +84,13 @@ variable "instance" {
   type        = string
 
 }
- 
+
+variable "max_retention_days"{
+  description="auto delete tiem"
+  type=string
+  default="15"
+}
+variable "policy_name"{
+  description="policy name "
+  type = string
+}
