@@ -53,7 +53,7 @@ variable "physical_block_size_bytes" {
 variable "description" {
   description = "An optional description of this resource"
   type        = string
-  default     = "This is a description for this resource"
+  default     = null
 }
 
 variable "interface" {
@@ -74,13 +74,14 @@ variable "snapshot" {
   default     = ""
 }
 variable "kms_key_self_link" {
-  description = "The kms_key_self_link for this disk"
+  description = "Self-link of a Cloud KMS key to encrypt this disk. When null (default), disk is not CMEK-encrypted."
   type        = string
-
+  default     = null
 }
-variable "instance" {
-  description = "The kms_key_self_link for this disk"
-  type        = string
 
+variable "instance" {
+  description = "Self-link of the Compute Engine instance to attach this disk to. When null (default), no attachment resource is created."
+  type        = string
+  default     = null
 }
  
